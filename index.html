@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learnify | Advance Your Engineering Skills</title>
+  <meta name="description" content="Learnify offers world-class Full Stack Web Development and engineering courses with 30% off on your first enroll. Build your skills with top mentors." />
+  <meta name="keywords" content="Learnify, online courses, engineering skills, web development, full stack, mentors, coding bootcamp, scholarships" />
+  <meta name="author" content="Learnify Team" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Learnify | Advance Your Engineering Skills" />
+  <meta property="og:description" content="Build skills with our courses and mentors from world-class companies. Get 30% off on your first enroll!" />
+  <meta property="og:image" content="https://yourdomain.com/asset/imgBnner.png" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Learnify | Advance Your Engineering Skills" />
+  <meta name="twitter:description" content="Learnify offers world-class Full Stack Web Development and engineering courses with 30% off on your first enroll." />
+  <meta name="twitter:image" content="https://yourdomain.com/asset/imgBnner.png" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Boxicons CDN -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./src/localStyle.css">
+
+</head>
+
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Notification Bar -->
+  <div class="notification-bar text-sm text-gray-700 flex items-center justify-center py-2 px-4 border-b border-blue-100" role="alert" aria-label="Scholarship Alert">
+    <div class="flex items-center gap-2 max-w-6xl w-full justify-center">
+      <span class="text-blue-500 animate-pulse">
+        <i class="bx bx-bullhorn" aria-hidden="true"></i>
+      </span>
+      <span class="text-center font-medium">🎓 Scholarship Alert: Full Stack Web Development 50% Off - Limited Time Offer!</span>
+      <button class="ml-4 text-blue-500 hover:text-blue-700 transition-colors" aria-label="Close notification">
+        <i class="bx bx-x"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <nav class="bg-white nav-shadow px-4 sm:px-6 py-3 flex items-center justify-between max-w-7xl mx-auto" role="navigation" aria-label="Main Navigation">
+    <a href="/" class="flex items-center gap-3">
+      <img src="../asset/logo.png" alt="Learnify Logo" class="h-9 w-9" />
+      <span class="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">Learnify</span>
+    </a>
+
+    <ul class="hidden md:flex items-center gap-8 font-medium">
+      <li><a href="#" class="nav-link text-gray-700 hover:text-blue-600">Home</a></li>
+      <li><a href="#" class="nav-link text-gray-700 hover:text-blue-600">Courses</a></li>
+      <li><a href="#" class="nav-link text-gray-700 hover:text-blue-600">Career</a></li>
+      <li><a href="#" class="nav-link text-gray-700 hover:text-blue-600">About Us</a></li>
+      <li><a href="#" class="nav-link text-gray-700 hover:text-blue-600">Contact</a></li>
+    </ul>
+
+    <div class="flex items-center gap-4">
+      <button class="cart-icon text-gray-600 hover:text-blue-600 relative p-2 icon-btn" aria-label="View cart">
+        <i class="bx bx-cart text-xl"></i>
+      </button>
+
+      <div class="dropdown relative">
+        <button id="theme-toggle-btn" type="button" class="flex items-center text-gray-700 hover:text-blue-600 p-2 icon-btn" aria-label="Theme settings">
+          <i class="bx bx-moon text-xl"></i>
+        </button>
+        <div id="theme-dropdown-menu" class="dropdown-menu py-2 bg-white dark:bg-gray-800 hidden absolute right-0 mt-2 min-w-[180px] rounded shadow-lg z-50">
+          <div class="px-4 py-2 flex items-center justify-between">
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-200">Dark Mode</span>
+            <label class="dark-mode-switch">
+              <input type="checkbox" aria-label="Toggle dark mode">
+              <span class="dark-mode-slider"></span>
+            </label>
+          </div>
+          <hr class="my-1 border-gray-200 dark:border-gray-700 mx-3">
+          <a href="#" class="dropdown-item flex items-center gap-3 dark:text-gray-200">
+            <i class="bx bx-sun text-gray-500 dark:text-yellow-300 text-lg"></i>
+            <span class="text-sm">Light</span>
+          </a>
+          <a href="#" class="dropdown-item flex items-center gap-3 dark:text-gray-200">
+            <i class="bx bx-moon text-gray-500 dark:text-blue-300 text-lg"></i>
+            <span class="text-sm">Dark</span>
+          </a>
+          <a href="#" class="dropdown-item flex items-center gap-3 dark:text-gray-200">
+            <i class="bx bx-adjust text-gray-500 dark:text-green-300 text-lg"></i>
+            <span class="text-sm">System</span>
+          </a>
+        </div>
+      </div>
+
+      <a href="#" class="register-btn text-white px-6 py-2.5 rounded-full font-semibold text-sm hidden sm:inline-block">
+        Register Now
+      </a>
+
+      <button class="md:hidden text-gray-600 hover:text-blue-600 p-2 icon-btn" aria-label="Open menu">
+        <i class="bx bx-menu text-2xl"></i>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <section class=" flex items-center justify-center p-8">
+      <div class="max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+        <div>
+          <p class="text-green-600 font-semibold mb-4 flex items-center">
+            <span class="mr-2">✅</span> Get 30% off on first enroll
+          </p>
+
+          <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-6">
+            Advance your<br />
+            engineering skills with us.
+          </h1>
+
+          <p class="text-lg text-gray-600 mb-8">
+            Build skills with our courses and mentors from world-class companies.
+          </p>
+
+          <div class="flex gap-4">
+            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full font-medium transition">Get Started</a>
+            <a href="#" class="bg-blue-100 hover:bg-blue-200 text-blue-600 px-6 py-3 rounded-full font-medium transition">Get Free Trial</a>
+          </div>
+        </div>
+
+        <div class="relative flex justify-center">
+          <div class="absolute top-0 right-0 bg-white shadow-md px-4 py-2 rounded-xl flex items-center gap-3 text-sm floating delay-1">
+            <div class="bg-blue-500 text-white p-2 rounded-full">📅</div>
+            <div>
+              <p class="font-bold">250k</p>
+              <p class="text-gray-500">Assisted Students</p>
+            </div>
+          </div>
+
+          <div class="absolute top-24 left-0 bg-white shadow-md px-4 py-2 rounded-xl flex items-center gap-3 text-sm floating delay-2">
+            <div class="bg-orange-400 text-white p-2 rounded-full">✉️</div>
+            <div>
+              <p class="font-bold">Congratulations</p>
+              <p class="text-gray-500">Your admission completed</p>
+            </div>
+          </div>
+
+          <div class="absolute bottom-0 right-0 bg-white shadow-md px-4 py-2 rounded-xl flex items-center gap-3 text-sm floating">
+            <div class="bg-green-500 text-white p-2 rounded-full">⭐</div>
+            <div>
+              <p class="font-bold">4.9/5 Rating</p>
+              <p class="text-gray-500">From 10k+ reviews</p>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-tr from-blue-300 to-purple-300 p-4 rounded-3xl">
+            <img src="../asset/imgBnner.png" alt="Happy student learning online" class="w-full max-w-sm rounded-2xl" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Place your script here, just before closing body tag -->
+  <script src="./src/js/darkMode.js"></script>
+</body>
+</html>
