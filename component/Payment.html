@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learnify | Advance Your Engineering Skills</title>
+  <meta name="description"
+    content="Learnify offers world-class Full Stack Web Development and engineering courses with 30% off on your first enroll. Build your skills with top mentors." />
+  <meta name="keywords"
+    content="Learnify, online courses, engineering skills, web development, full stack, mentors, coding bootcamp, scholarships" />
+  <meta name="author" content="Learnify Team" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Learnify | Advance Your Engineering Skills" />
+  <meta property="og:description"
+    content="Build skills with our courses and mentors from world-class companies. Get 30% off on your first enroll!" />
+  <meta property="og:image" content="https://yourdomain.com/asset/imgBnner.png" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Learnify | Advance Your Engineering Skills" />
+  <meta name="twitter:description"
+    content="Learnify offers world-class Full Stack Web Development and engineering courses with 30% off on your first enroll." />
+  <meta name="twitter:image" content="https://yourdomain.com/asset/imgBnner.png" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Boxicons CDN -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="../src/localStyle.css">
+
+</head>
+
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Notification Bar -->
+  <div
+    class="notification-bar text-sm text-gray-700 flex items-center justify-center py-2 px-4 border-b border-blue-100">
+    <div class="flex items-center gap-2 max-w-6xl w-full justify-center">
+      <span class="text-blue-500 animate-pulse">
+        <i class="bx bx-bullhorn"></i>
+      </span>
+      <span class="text-center font-medium">🎓 Scholarship Alert: Full Stack Web Development 50% Off - Limited Time
+        Offer!</span>
+      <button class="ml-4 text-blue-500 hover:text-blue-700 transition-colors">
+        <i class="bx bx-x"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <nav class="bg-white nav-shadow px-4 sm:px-6 py-3 flex items-center justify-between max-w-7xl mx-auto">
+    <!-- Logo and Brand Name -->
+    <div class="flex items-center gap-3">
+      <img src="../asset/logo.png" alt="Logo" class="h-9 w-9" />
+      <span
+        class="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">Learnify</span>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="hidden md:flex items-center gap-8 font-medium">
+      <li><a href="#" class="nav-link text-gray-700 hover:text-blue-600">Home</a></li>
+      <li><a href="#" class="nav-link text-gray-700 hover:text-blue-600">Courses</a></li>
+      <li><a href="#" class="nav-link text-gray-700 hover:text-blue-600">Career</a></li>
+      <li><a href="#" class="nav-link text-gray-700 hover:text-blue-600">About Us</a></li>
+      <li><a href="#" class="nav-link text-gray-700 hover:text-blue-600">Contact</a></li>
+    </ul>
+
+    <!-- Right Side Icons and Button -->
+    <div class="flex items-center gap-4">
+      <!-- Shopping Cart -->
+      <button class="cart-icon text-gray-600 hover:text-blue-600 relative p-2 icon-btn" data-count="3">
+        <i class="bx bx-cart text-xl"></i>
+      </button>
+
+      <!-- Dark Mode Dropdown -->
+      <div class="dropdown relative">
+        <button class="flex items-center text-gray-700 hover:text-blue-600 p-2 icon-btn">
+          <i class="bx bx-moon text-xl"></i>
+        </button>
+        <div class="dropdown-menu py-2">
+          <div class="px-4 py-2 flex items-center justify-between">
+            <span class="text-sm font-medium text-gray-700">Theme</span>
+            <label class="dark-mode-switch">
+              <input type="checkbox">
+              <span class="dark-mode-slider"></span>
+            </label>
+          </div>
+          <hr class="my-1 border-gray-200 mx-3">
+          <a href="#" class="dropdown-item flex items-center gap-3">
+            <i class="bx bx-sun text-gray-500 text-lg"></i>
+            <span class="text-sm">Light</span>
+          </a>
+          <a href="#" class="dropdown-item flex items-center gap-3">
+            <i class="bx bx-moon text-gray-500 text-lg"></i>
+            <span class="text-sm">Dark</span>
+          </a>
+          <a href="#" class="dropdown-item flex items-center gap-3">
+            <i class="bx bx-adjust text-gray-500 text-lg"></i>
+            <span class="text-sm">System</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Register Button -->
+      <a href="#" class="register-btn text-white px-6 py-2.5 rounded-full font-semibold text-sm hidden sm:inline-block">
+        Register Now
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-gray-600 hover:text-blue-600 p-2 icon-btn">
+        <i class="bx bx-menu text-2xl"></i>
+      </button>
+    </div>
+  </nav>
+
+  <main class="bg-gray-100 p-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Checkout Left -->
+      <div class="lg:col-span-2 bg-white p-6 rounded-xl shadow-md">
+        <h2 class="text-2xl font-semibold mb-4">Checkout</h2>
+
+        <!-- Country Selector -->
+        <div class="mb-6">
+          <label class="block font-medium mb-1">Billing address</label>
+          <div class="relative">
+            <select class="border rounded w-full p-2 pl-10 appearance-none">
+              <option value="Cambodia">Cambodia</option>
+            </select>
+            <i class='bx bx-globe absolute left-3 top-2.5 text-gray-500'></i>
+          </div>
+          <p class="text-sm text-gray-500 mt-2">
+            Udemy is required by law to collect applicable transaction taxes for purchases made in certain tax
+            jurisdictions
+          </p>
+        </div>
+
+        <!-- Payment Tabs -->
+        <div class="mb-2">
+          <h3 class="font-semibold text-lg mb-2">Payment Details</h3>
+          <div class="flex gap-4 mb-4 border-b border-gray-200 pb-1">
+            <button class="border-b-2 border-blue-500 font-semibold text-blue-600">Credit card</button>
+            <button class="text-gray-500">Paypal</button>
+            <button class="text-gray-500">Qr</button>
+            <button class="text-gray-500">Other</button>
+          </div>
+
+          <!-- Saved Cards -->
+          <div class="grid grid-cols-2 md:grid-cols-2 gap-4 mb-3">
+            <img src="../asset/cardvisa.png" class="w-full rounded-xl border shadow-sm" />
+            <img src="../asset/cardvisa2.png" class="w-full rounded-xl border shadow-sm" />
+          </div>
+
+          <!-- Add New -->
+          <div class="flex items-center gap-2 mb-6 text-blue-600 hover:text-blue-800 cursor-pointer">
+            <i class='bx bx-plus-circle text-lg'></i>
+            <span class="text-sm font-medium">Add new</span>
+          </div>
+
+          <!-- Card Form -->
+          <label class="block mb-2 font-medium">Pay using credit card</label>
+          <div class="flex items-center gap-3 mb-4">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" class="h-5" />
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" class="h-5" />
+          </div>
+
+          <input type="text" placeholder="Credit card" class="w-full p-2 border rounded mb-3" />
+          <input type="text" placeholder="Name" class="w-full p-2 border rounded mb-3" />
+          <div class="grid grid-cols-2 gap-4 mb-4">
+            <input type="text" placeholder="Expiration Date" class="p-2 border rounded w-full" />
+            <input type="text" placeholder="CVV" class="p-2 border rounded w-full" />
+          </div>
+
+          <div class="flex items-center mb-4">
+            <input type="checkbox" id="saveCard" class="mr-2" />
+            <label for="saveCard" class="text-sm">Save card</label>
+          </div>
+
+          <button class="bg-blue-600 text-white py-2 px-6 rounded-full hover:bg-blue-700 flex items-center gap-2">
+            <i class='bx bx-credit-card'></i> Pay
+          </button>
+        </div>
+      </div>
+
+      <!-- Orders Right -->
+      <div class="bg-white p-6 rounded-xl shadow-md">
+        <h3 class="text-lg font-semibold mb-4">Orders details</h3>
+
+        <div class="space-y-4 mb-6">
+          <!-- Repeat for each item -->
+          <div class="flex gap-4">
+            <img src="https://img-c.udemycdn.com/course/240x135/placeholder.jpg"
+              class="w-20 h-14 rounded object-cover" />
+            <div>
+              <h4 class="text-sm font-medium">Artificial Intelligent</h4>
+              <div class="text-yellow-500 text-sm">⭐ 4.5k</div>
+              <div class="text-gray-500 line-through text-sm">$60.00</div>
+              <div class="text-black font-bold">$50.00</div>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <img src="https://img-c.udemycdn.com/course/240x135/placeholder.jpg"
+              class="w-20 h-14 rounded object-cover" />
+            <div>
+              <h4 class="text-sm font-medium">Artificial Intelligent</h4>
+              <div class="text-yellow-500 text-sm">⭐ 4.5k</div>
+              <div class="text-gray-500 line-through text-sm">$60.00</div>
+              <div class="text-black font-bold">$50.00</div>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <img src="https://img-c.udemycdn.com/course/240x135/placeholder.jpg"
+              class="w-20 h-14 rounded object-cover" />
+            <div>
+              <h4 class="text-sm font-medium">Artificial Intelligent</h4>
+              <div class="text-yellow-500 text-sm">⭐ 4.5k</div>
+              <div class="text-gray-500 line-through text-sm">$60.00</div>
+              <div class="text-black font-bold">$50.00</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-sm text-gray-500 mb-2">Date: <span class="text-black">Monday, August 11, 2025</span></div>
+        <div class="text-sm text-gray-500 mb-4">Time: <span class="text-black">9:00 AM</span></div>
+
+        <div class="text-lg font-bold border-t pt-4">
+          Total:
+          <span class="float-right">$150.00</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+</body>
+<script src="../src/js/darkMode.js"></script>
+
+</html>
