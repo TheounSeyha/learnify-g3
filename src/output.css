@@ -13,6 +13,14 @@
     --font-weight-bold: 700;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --color-primary: #3b82f6;        /* Blue - Primary */
+    --color-background: #ffffff;     /* White - Background */
+    --color-secondary: #6366f1;      /* Indigo - Secondary Color */
+    --color-text-primary: #0f172a;   /* Dark navy - Text Primary */
+    --color-highlight: #22c55e;      /* Green - Highlight Text */
+    --color-border-lines: #e5e7eb;   /* Light grey - Border Lines */
+    --color-text-secondary: #9ca3af; /* Gray - Text Secondary */
+
   }
 }
 @layer base {
