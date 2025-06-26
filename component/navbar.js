@@ -29,10 +29,9 @@ const navbarHTML = `
         <i class="bx bx-moon text-xl"></i>
       </button>
 
-      <a href="#" class="bg-blue-500 px-5 py-2 rounded-full font-medium text-sm hidden sm:inline-block animate-zoom-in">
+      <a href="#" class="bg-blue-500 px-5 py-2 rounded-full font-medium text-sm hidden sm:inline-block animate-zoom-in" id="openLogin" >
         Register Now
       </a>
-
       <button class="md:hidden text-gray-600 dark:text-gray-300 hover:text-blue-600 p-2">
         <i class="bx bx-menu text-2xl"></i>
       </button>
@@ -42,11 +41,23 @@ const navbarHTML = `
 
 document.getElementById("app-navbar").innerHTML = navbarHTML;
 
-// Theme toggle logic
+// navbar.js  (loaded as type="module")
+import { setupLoginModal } from "../src/js/login-modal.js";
+
+// 🗂️ build the correct URL next to this JS file
+const modalURL = new URL("./login-modal.html", import.meta.url);
+
+fetch(modalURL)
+  .then(res => res.text())
+  .then(html => {
+    document.getElementById("modalContainer").innerHTML = html;
+    setupLoginModal();
+  });
+
+// Dark mode toggle
 document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("themeToggle");
 
-  // Load saved theme
   if (localStorage.getItem("theme") === "dark") {
     document.documentElement.classList.add("dark");
   }
@@ -57,3 +68,4 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("theme", isDark ? "dark" : "light");
   });
 });
+

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learnify | Advance Your Engineering Skills</title>
+
+    <!-- Tailwind CSS -->
+    <linkrel="stylesheet"  href="../dist/output.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../src/localStyle.css" />
+
+    <!-- Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+    <script src="../src/js/animation.js"></script>
+    <style>
+        /* Section-wide drifting dot movement */
+        @keyframes drift {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(60px, -60px) scale(1.2);
+            }
+        }
+
+        .bg-dot {
+            position: absolute;
+            border-radius: 9999px;
+            /* full rounded */
+            opacity: 0.4;
+            filter: blur(40px);
+            pointer-events: none;
+            animation: drift 14s ease-in-out infinite;
+        }
+
+        /* Smaller animated dots */
+        @keyframes floatUpDown {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .animate-float {
+            animation: floatUpDown 3.5s ease-in-out infinite;
+        }
+
+        /* Icon wobble (rotational) */
+        @keyframes wobbleRotate {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(10deg);
+            }
+        }
+
+        .animate-wobble {
+            animation: wobbleRotate 4s ease-in-out infinite;
+        }
+
+        /* Icon pulse (zoom in and out) */
+        @keyframes pulseScale {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        .animate-pulse-scale {
+            animation: pulseScale 2.5s ease-in-out infinite;
+        }
+
+        /* Optional background dots texture (SVG grid-like dots) */
+        .dots-bg::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 4 4' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='0.5' cy='0.5' r='0.5' fill='%23dbeafe'/%3E%3C/svg%3E");
+            opacity: 0.4;
+            z-index: -1;
+        }
+
+        /* ---------- existing animations (keep yours) ---------- */
+        @keyframes drift {
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1)
+            }
+
+            50% {
+                transform: translate(60px, -60px) scale(1.2)
+            }
+        }
+
+        @keyframes floatUpDown {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-10px)
+            }
+        }
+
+        @keyframes wobbleRotate {
+
+            0%,
+            100% {
+                transform: rotate(0)
+            }
+
+            50% {
+                transform: rotate(10deg)
+            }
+        }
+
+        @keyframes pulseScale {
+
+            0%,
+            100% {
+                transform: scale(1)
+            }
+
+            50% {
+                transform: scale(1.15)
+            }
+        }
+
+        .bg-dot {
+            position: absolute;
+            border-radius: 9999px;
+            opacity: .4;
+            filter: blur(40px);
+            pointer-events: none;
+            animation: drift 14s ease-in-out infinite;
+        }
+
+        .animate-float {
+            animation: floatUpDown 3.5s ease-in-out infinite;
+        }
+
+        .animate-wobble {
+            animation: wobbleRotate 4s ease-in-out infinite;
+        }
+
+        .animate-pulse-scale {
+            animation: pulseScale 2.5s ease-in-out infinite;
+        }
+
+        .dots-bg::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 4 4' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='0.5' cy='0.5' r='0.5' fill='%23dbeafe'/%3E%3C/svg%3E") repeat;
+            opacity: .4;
+            z-index: -1;
+        }
+
+        /* ---------- NEW text entrance + gentle drift ---------- */
+        /* 1) entrance: slide from left & fade in */
+        @keyframes slideInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+
+            60% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* 2) entrance: fade up */
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            60% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 3) gentle perpetual hover */
+        @keyframes hoverFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+        }
+
+        .animate-heading-in {
+            animation: slideInLeft .9s ease-out both;
+        }
+
+        .animate-paragraph-in {
+            animation: fadeUp 1s ease-out .15s both;
+        }
+
+        /* starts 0.15 s later */
+        .animate-hover {
+            animation: hoverFloat 5s ease-in-out 1s infinite;
+        }
+    </style>
+
+</head>
+
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-300 font-sans">
+    <!-- Top Alert -->
+    <div
+        class="bg-blue-50 text-sm text-gray-700 dark:bg-gray-800 dark:text-white flex justify-center py-2 border-b border-blue-100">
+        <div class="flex items-center gap-2 max-w-6xl w-full justify-center">
+            <i class="bx bx-bullhorn text-blue-500 animate-pulse"></i>
+            <span class="animate-fade-in-up">🎓 Scholarship Alert: Full Stack Web Development 50% Off - Limited
+                Time!</span>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <section class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-300">
+        <div id="app-navbar"></div>
+        <div id="modalContainer"></div>
+    </section>
+    <main>
+        <section
+            class="relative overflow-hidden max-w-7xl mx-auto px-4 md:px-10 py-20 grid gap-12 md:grid-cols-2 items-center">
+
+            <!-- ✨ BLURRED FLOATING DOTS (behind everything) -->
+            <div class="absolute inset-0 -z-10">
+                <!-- Use inline style for different sizes/positions/delays  -->
+                <span style="width:160px;height:160px;left:-60px;top:-40px;background:#99f6e4;animation-delay:.2s;"
+                    class="bg-dot"></span>
+                <span style="width:220px;height:220px;right:-80px;top:10%;background:#c4b5fd;animation-delay:1.2s;"
+                    class="bg-dot"></span>
+                <span style="width:180px;height:180px;left:45%;top:65%;background:#fde68a;animation-delay:3s;"
+                    class="bg-dot"></span>
+                <span style="width:140px;height:140px;left:10%;bottom:-70px;background:#99f6e4;animation-delay:5s;"
+                    class="bg-dot"></span>
+                <span style="width:260px;height:260px;right:-100px;bottom:-80px;background:#c7d2fe;animation-delay:7s;"
+                    class="bg-dot"></span>
+                <!-- 5 more small / medium dots -->
+                <span style="width:80px;height:80px;left:35%;top:15%;background:#fcd34d;animation-delay:2.4s;"
+                    class="bg-dot"></span>
+                <span style="width:90px;height:90px;left:65%;top:45%;background:#a5b4fc;animation-delay:6s;"
+                    class="bg-dot"></span>
+                <span style="width:110px;height:110px;right:35%;top:25%;background:#6ee7b7;animation-delay:4s;"
+                    class="bg-dot"></span>
+                <span style="width:70px;height:70px;left:15%;top:40%;background:#c4b5fd;animation-delay:8.5s;"
+                    class="bg-dot"></span>
+                <span style="width:100px;height:100px;right:20%;bottom:15%;background:#fde68a;animation-delay:10s;"
+                    class="bg-dot"></span>
+            </div>
+
+            <!-- ▸ text block -->
+            <div>
+                <h2 class="text-3xl md:text-4xl font-extrabold leading-tight
+             animate-heading-in animate-hover">
+                    <span class="text-green-500">Tools</span> For Teachers <br />And Learners
+                </h2>
+
+                <p class="mt-4 max-w-md leading-relaxed
+            animate-paragraph-in animate-hover">
+                    Class has a dynamic set of teaching tools built to be deployed and used during
+                    class. Teachers can handout assignments in real-time for students to complete
+                    and submit.
+                </p>
+            </div>
+
+
+            <!-- ▸ student photo, floating dots, icon squares --------------------->
+            <div class="relative isolate">
+                <!-- tiny animated dots (reuse previous float) -->
+                <span class="absolute w-2 h-2 rounded-full bg-green-400 top-3 right-10 animate-float"></span>
+                <span class="absolute w-2 h-2 rounded-full bg-indigo-400 bottom-6 right-3 animate-float"></span>
+                <span class="absolute w-2 h-2 rounded-full bg-amber-400 left-4 bottom-1/3 animate-float"></span>
+
+                <!-- icon 1 -->
+                <div class="absolute -top-4 left-12 bg-indigo-50 border border-indigo-200
+                flex items-center justify-center w-9 h-9 rounded-xl shadow animate-wobble">
+                    <svg class="w-5 h-5 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M4 3h12a2 2 0 012 2v2H2V5a2 2 0 012-2zM2 9h16v6a2 2 0 01-2 2H4a2 2 0 01-2-2V9z" />
+                    </svg>
+                </div>
+
+                <!-- icon 2 -->
+                <div class="absolute top-10 -right-4 bg-indigo-50 border border-indigo-200
+                flex items-center justify-center w-9 h-9 rounded-xl shadow animate-pulse-scale">
+                    <svg class="w-5 h-5 text-indigo-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2l5 9H5l5-9zm0 4a1 1 0 100 2 1 1 0 000-2zm-4 9h8v2H6v-2z" />
+                    </svg>
+                </div>
+
+                <!-- student img -->
+                <img src="../asset/Exams.gif" alt="Student" class="relative z-10 w-[260px] md:w-[320px] mx-auto" />
+            </div>
+        </section>
+        <!-- ▸ WHAT IS LEARNIFY? ------------------------------------------------>
+        <section class="max-w-3xl mx-auto px-4 text-center py-16" data-aos="fade-down">
+            <h2 class="text-2xl md:text-3xl font-extrabold">
+                What is <span class="text-green-500">Learnify?</span>
+            </h2>
+            <p class="mt-4 leading-relaxed">
+                Learnify is a platform that allows educators to create online classes
+                whereby they can store course materials online; manage assignments,
+                quizzes and exams; monitor due dates; grade results and provide
+                students with feedback—all in one place.
+            </p>
+        </section>
+
+        <!-- ▸ CARD GRID -------------------------------------------------------->
+        <section class="max-w-7xl mx-auto px-4 md:px-10 pb-24">
+            <!-- first row (2 wide) -->
+            <div class="grid gap-6 md:grid-cols-2 mb-6">
+                <!-- card 1 -->
+                <div class="relative overflow-hidden rounded-xl group" data-aos="fade-down" data-aos-duration="300">
+                    <img src="../asset/photo_1_2025-06-25_19-04-39.jpg"
+                        class="object-cover w-full h-60 md:h-72 group-hover:scale-105 transition" />
+                    <!-- subtle white overlay on hover -->
+                    <div class="absolute inset-0 bg-white/50 opacity-0 group-hover:opacity-100 transition"></div>
+                </div>
+
+                <!-- card 2 with CTA -->
+                <div class="relative overflow-hidden rounded-xl group" data-aos="fade-down" data-aos-duration="500">
+                    <img src="../asset/photo_2_2025-06-25_19-04-39.jpg"
+                        class="object-cover w-full h-60 md:h-72 group-hover:scale-105 transition" />
+                    <div class="absolute inset-0 bg-slate-900/30"></div>
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-white">
+                        <h3 class="text-lg font-semibold mb-2 tracking-wide">
+                            FOR STUDENTS
+                        </h3>
+                        <a href="#" class="bg-blue-500 hover:bg-blue-600 px-6 py-2 rounded-full text-sm font-medium">
+                            Enter access code
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- second row (3 wide) -->
+            <div class="grid gap-6 md:grid-cols-4">
+                <!-- tag card -->
+                <div class="relative overflow-hidden rounded-xl group" data-aos="fade-down" data-aos-duration="500">
+                    <img src="../asset/UI.png" class="object-cover w-full h-48 group-hover:scale-105 transition" />
+                    <span
+                        class="absolute inset-x-0 bottom-0 bg-black/50 text-white text-center py-2 text-sm font-semibold">UX/UI</span>
+                </div>
+
+                <div class="relative overflow-hidden rounded-xl group" data-aos="fade-down" data-aos-duration="700">
+                    <img src="../asset/REACT.png" class="object-cover w-full h-48 group-hover:scale-105 transition" />
+                    <span
+                        class="absolute inset-x-0 bottom-0 bg-black/50 text-white text-center py-2 text-sm font-semibold">React</span>
+                </div>
+
+                <div class="relative overflow-hidden rounded-xl group" data-aos="fade-down" data-aos-duration="900">
+                    <img src="../asset/PHP.png" class="object-cover w-full h-48 group-hover:scale-105 transition" />
+                    <span
+                        class="absolute inset-x-0 bottom-0 bg-black/50 text-white text-center py-2 text-sm font-semibold">PHP</span>
+                </div>
+
+                <div class="relative overflow-hidden rounded-xl group " data-aos="fade-down" data-aos-duration="1100">
+                    <!-- only visible on small screens to keep grid filled -->
+                    <img src="../asset/JS.png" class="object-cover w-full h-48 group-hover:scale-105 transition" />
+                    <span
+                        class="absolute inset-x-0 bottom-0 bg-black/50 text-white text-center py-2 text-sm font-semibold">JavaScript</span>
+                </div>
+            </div>
+            <div id="cards" class="mx-auto max-w-6xl grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-10"></div>
+        </section>
+    </main>
+    <div id="app-footer"></div>
+
+    <!-- Dark Mode Toggle Script -->
+    <script>
+        document.getElementById("themeToggle").addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark");
+        });
+    </script>
+    <script src="../src/js/count.js"></script>
+    <script src="../src/js/card.js"></script>
+    <script src="../src/js/corousel.js"></script>
+    <script type="module" src="../component/footerComponent.js"></script>
+    <script src="../component/course.js"></script>
+    <script type="module" src="./navbar.js"></script>
+    <script src="../src/js/cardcareer.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

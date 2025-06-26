@@ -6,7 +6,7 @@
     <title>Learnify | Advance Your Engineering Skills</title>
 
     <!-- Tailwind CSS -->
-    <link href="./dist/output.css rel="stylesheet">
+   <link rel="stylesheet" href="./dist/output.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./src/localStyle.css" />
 
@@ -42,9 +42,9 @@
     </div>
 
     <!-- Navbar -->
-    <section class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-300">
-      <div id="app-navbar"></div>
-    </section>
+    <div id="app-navbar"></div> 
+    <div id="modalContainer"></div>
+    
     <main>
       <section
         class="px-4 py-16 sm:px-8 bg-gradient-to-br from-blue-200 via-purple-200 to-purple-300 dark:from-gray-800 dark:via-gray-700 dark:to-gray-900 transition-colors duration-300"
@@ -441,7 +441,11 @@
         </div>
       </search>
     </main>
+
+
     <div id="app-footer"></div>
+    <!-- <h1 class="text-2xl font-bold mb-6">All Courses</h1> -->
+  
 
     <!-- Dark Mode Toggle Script -->
     <script>
@@ -450,10 +454,14 @@
       });
     </script>
     <script src="./src/js/count.js"></script>
+    <!-- (near the bottom of index.html, before </body>) -->
+<script type="module" src="./src/js/courseDetail.js"></script>
+
+
     <script src="./src/js/card.js"></script>
     <script src="./src/js/corousel.js"></script>
     <script type="module" src="./component/footerComponent.js"></script>
     <script src="./component/course.js"></script>
-    <script src="./component/navbar.js"></script>
+    <script type="module" src="./component/navbar.js"></script>
   </body>
 </html>
