@@ -1,17 +1,30 @@
-// login-modal.js
+/* src/js/login-modal.js */
 export function setupLoginModal() {
-  const modal = document.getElementById('loginModal');
-  const openBtn = document.getElementById('openLogin');
-  const closeBtn = document.getElementById('closeLogin');
-  const backdrop = document.getElementById('backdrop');
+  const loginModal     = document.getElementById("loginModal");
+  const registerModal  = document.getElementById("registerModal");
+  if (!loginModal || !registerModal) {
+    console.warn("Modal HTML not in DOM yet.");
+    return;
+  }
 
-  if (!modal || !openBtn || !closeBtn || !backdrop) return;
+  /* helpers */
+  const openLogin    = () => loginModal.classList.remove("hidden");
+  const closeLogin   = () => loginModal.classList.add("hidden");
+  const openRegister = () => { closeLogin(); registerModal.classList.remove("hidden"); };
+  const closeRegister= () => registerModal.classList.add("hidden");
 
-  openBtn.addEventListener('click', () => modal.classList.remove('hidden'));
-  closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
-  backdrop.addEventListener('click', () => modal.classList.add('hidden'));
+  /* triggers */
+  document.getElementById("openLoginModal")?.addEventListener("click", e => { e.preventDefault(); openLogin(); });
+  document.getElementById("closeLogin")    ?.addEventListener("click", closeLogin);
+  document.getElementById("closeRegister") ?.addEventListener("click", closeRegister);
+  document.getElementById("goToRegister")  ?.addEventListener("click", e => { e.preventDefault(); openRegister(); });
+  document.getElementById("goToLogin")     ?.addEventListener("click",   e => { e.preventDefault(); openLogin();   });
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') modal.classList.add('hidden');
+  /* backdrop click closes whichever is open */
+  document.getElementById("backdrop")?.addEventListener("click", () => { closeLogin(); closeRegister(); });
+
+  /* Esc key */
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") { closeLogin(); closeRegister(); }
   });
 }
