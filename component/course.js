@@ -8,7 +8,7 @@
    const courses = [
     {
       id: 1,
-      image: "/asset/PHP.png",
+      image: "https://thetutorbridge.com/blog/wp-content/uploads/2025/02/Data-Science-Course.webp",
       title: "IT Statistics Data Science And Business Analysis",
       rating: "4.5",
       reviews: "1.2k",
@@ -21,7 +21,7 @@
     },
     {
       id: 2,
-      image: "/asset/PHP.png",
+      image: "https://www.tekkiwebsolutions.com/wp-content/uploads/html5-benefits.svg",
       title: "HTML5 Complete Course For Beginners",
       rating: "4.8",
       reviews: "890",
@@ -34,7 +34,7 @@
     },
     {
       id: 3,
-      image: "/asset/PHP.png",
+      image: "https://i0.wp.com/epthinktank.eu/wp-content/uploads/2018/09/shutterstock_1054622195.jpg?fit=1000%2C1000&ssl=1",
       title: "Blockchain Essentials & Smart Contracts",
       rating: "4.6",
       reviews: "1.5k",
@@ -47,8 +47,8 @@
     },
     {
       id: 4,
-      image: "/asset/PHP.png",
-      title: "Live Streaming & Content Creation Masterclass",
+      image: "https://www.keycdn.com/img/support/full-stack-development.png",
+      title: "full Stack Web Development Bootcamp",
       rating: "4.9",
       reviews: "2.1k",
       price: 55.0,

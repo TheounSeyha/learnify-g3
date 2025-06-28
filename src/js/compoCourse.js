@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: 2,
-      image: "https://thetutorbridge.com/blog/wp-content/uploads/2025/02/Data-Science-Course.webp",
+      image: "https://www.tekkiwebsolutions.com/wp-content/uploads/html5-benefits.svg",
       title: "HTML5 Complete Course For Beginners",
       rating: "4.8",
       reviews: "2.4k",
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: 3,
-      image: "https://thetutorbridge.com/blog/wp-content/uploads/2025/02/Data-Science-Course.webp",
+      image: "https://i0.wp.com/epthinktank.eu/wp-content/uploads/2018/09/shutterstock_1054622195.jpg?fit=1000%2C1000&ssl=1",
       title: "Blockchain Essentials & Smart Contracts",
       rating: "4.6",
       reviews: "1.8k",
@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: 4,
-      image: "https://thetutorbridge.com/blog/wp-content/uploads/2025/02/Data-Science-Course.webp",
-      title: "Live Streaming & Content Creation Masterclass",
+      image: "https://www.keycdn.com/img/support/full-stack-development.png",
+      title: "full Stack Web Development Bootcamp",
       rating: "4.9",
       reviews: "3.1k",
       price: "$55.00",
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       id: 7,
       image: "https://thetutorbridge.com/blog/wp-content/uploads/2025/02/Data-Science-Course.webp",
-      title: "UI/UX Design Principles",
+      title: "UI/UX Design Principles and Tools",
       rating: "4.9",
       reviews: "2.8k",
       price: "$50.00",

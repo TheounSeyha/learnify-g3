@@ -50,3 +50,228 @@
   .animate-bounce-x-slow {
     animation: bounceXSlow 6s ease-in-out infinite;
   }
+
+
+  /* Section-wide drifting dot movement */
+  @keyframes drift {
+
+      0%,
+      100% {
+          transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+          transform: translate(60px, -60px) scale(1.2);
+      }
+  }
+
+  .bg-dot {
+      position: absolute;
+      border-radius: 9999px;
+      /* full rounded */
+      opacity: 0.4;
+      filter: blur(40px);
+      pointer-events: none;
+      animation: drift 14s ease-in-out infinite;
+  }
+
+  /* Smaller animated dots */
+  @keyframes floatUpDown {
+
+      0%,
+      100% {
+          transform: translateY(0);
+      }
+
+      50% {
+          transform: translateY(-10px);
+      }
+  }
+
+  .animate-float {
+      animation: floatUpDown 3.5s ease-in-out infinite;
+  }
+
+  /* Icon wobble (rotational) */
+  @keyframes wobbleRotate {
+
+      0%,
+      100% {
+          transform: rotate(0deg);
+      }
+
+      50% {
+          transform: rotate(10deg);
+      }
+  }
+
+  .animate-wobble {
+      animation: wobbleRotate 4s ease-in-out infinite;
+  }
+
+  /* Icon pulse (zoom in and out) */
+  @keyframes pulseScale {
+
+      0%,
+      100% {
+          transform: scale(1);
+      }
+
+      50% {
+          transform: scale(1.15);
+      }
+  }
+
+  .animate-pulse-scale {
+      animation: pulseScale 2.5s ease-in-out infinite;
+  }
+
+  /* Optional background dots texture (SVG grid-like dots) */
+  .dots-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 4 4' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='0.5' cy='0.5' r='0.5' fill='%23dbeafe'/%3E%3C/svg%3E");
+      opacity: 0.4;
+      z-index: -1;
+  }
+
+  /* ---------- existing animations (keep yours) ---------- */
+  @keyframes drift {
+
+      0%,
+      100% {
+          transform: translate(0, 0) scale(1)
+      }
+
+      50% {
+          transform: translate(60px, -60px) scale(1.2)
+      }
+  }
+
+  @keyframes floatUpDown {
+
+      0%,
+      100% {
+          transform: translateY(0)
+      }
+
+      50% {
+          transform: translateY(-10px)
+      }
+  }
+
+  @keyframes wobbleRotate {
+
+      0%,
+      100% {
+          transform: rotate(0)
+      }
+
+      50% {
+          transform: rotate(10deg)
+      }
+  }
+
+  @keyframes pulseScale {
+
+      0%,
+      100% {
+          transform: scale(1)
+      }
+
+      50% {
+          transform: scale(1.15)
+      }
+  }
+
+  .bg-dot {
+      position: absolute;
+      border-radius: 9999px;
+      opacity: .4;
+      filter: blur(40px);
+      pointer-events: none;
+      animation: drift 14s ease-in-out infinite;
+  }
+
+  .animate-float {
+      animation: floatUpDown 3.5s ease-in-out infinite;
+  }
+
+  .animate-wobble {
+      animation: wobbleRotate 4s ease-in-out infinite;
+  }
+
+  .animate-pulse-scale {
+      animation: pulseScale 2.5s ease-in-out infinite;
+  }
+
+  .dots-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 4 4' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='0.5' cy='0.5' r='0.5' fill='%23dbeafe'/%3E%3C/svg%3E") repeat;
+      opacity: .4;
+      z-index: -1;
+  }
+
+  /* ---------- NEW text entrance + gentle drift ---------- */
+  /* 1) entrance: slide from left & fade in */
+  @keyframes slideInLeft {
+      0% {
+          opacity: 0;
+          transform: translateX(-50px);
+      }
+
+      60% {
+          opacity: 1;
+      }
+
+      100% {
+          opacity: 1;
+          transform: translateX(0);
+      }
+  }
+
+  /* 2) entrance: fade up */
+  @keyframes fadeUp {
+      0% {
+          opacity: 0;
+          transform: translateY(30px);
+      }
+
+      60% {
+          opacity: 1;
+      }
+
+      100% {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  /* 3) gentle perpetual hover */
+  @keyframes hoverFloat {
+
+      0%,
+      100% {
+          transform: translateY(0);
+      }
+
+      50% {
+          transform: translateY(-6px);
+      }
+  }
+
+  .animate-heading-in {
+      animation: slideInLeft .9s ease-out both;
+  }
+
+  .animate-paragraph-in {
+      animation: fadeUp 1s ease-out .15s both;
+  }
+
+  /* starts 0.15 s later */
+  .animate-hover {
+      animation: hoverFloat 5s ease-in-out 1s infinite;
+  }
