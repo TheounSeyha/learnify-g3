@@ -25,7 +25,7 @@ const navbarHTML = /*html*/ `
       <button id="cartToggleBtn"
               class="relative text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400
                      transition-transform duration-300 hover:scale-110 focus:outline-none">
-       <a href="component/Payment.html">
+       <a href="/component/Payment.html">
          <i class="bx bx-cart text-2xl"></i>
         </a>
    
