@@ -34,3 +34,21 @@ form.addEventListener('submit', e => {
     document.getElementById('save-card').checked = false;
   }, 1200);
 });
+
+  const expInput = document.getElementById("cc-exp");
+
+  expInput.addEventListener("input", (e) => {
+    let val = e.target.value.replace(/[^0-9]/g, ""); // remove non-digits
+    if (val.length >= 3) {
+      val = val.slice(0, 2) + "/" + val.slice(2, 4);
+    }
+    e.target.value = val.slice(0, 5); // max 5 characters (MM/YY)
+  });
+  const ccInput = document.getElementById("cc-number");
+
+  ccInput.addEventListener("input", (e) => {
+    let value = e.target.value.replace(/\D/g, ""); // remove non-digits
+    let formatted = value.match(/.{1,4}/g)?.join(" ") || "";
+    e.target.value = formatted.slice(0, 19); // max 19 chars
+  });
+

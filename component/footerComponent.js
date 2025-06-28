@@ -1,8 +1,8 @@
 const footerHTML = `
   <footer class="bg-gray-200 dark:bg-gray-800 py-8 text-center text-gray-700 dark:text-gray-300 transition-colors duration-300">
-    <div class="flex flex-col items-center space-y-4">
+   <div class="flex flex-col items-center space-y-4">
       <div class="flex items-center space-x-2">
-        <img src="../asset/logo.png" alt="Learnify Logo" class="h-8 w-8" />
+        <img src="/asset/logo.png" alt="Learnify Logo" class="h-8 w-8" />
         <span class="text-xl font-semibold text-gray-800 dark:text-white">Learnify</span>
       </div>
 

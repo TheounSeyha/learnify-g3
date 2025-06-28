@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Detail</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Boxicons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="bg-gray-100 text-gray-900 font-sans">
+    <main
+      class="max-w-4xl mx-auto mt-10 bg-white p-6 rounded-lg shadow"
+      id="courseDetail"
+    >
+      <!-- Content will be injected here -->
+    </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const courses = [
+          {
+            id: 1,
+            image:
+              "https://thetutorbridge.com/blog/wp-content/uploads/2025/02/Data-Science-Course.webp",
+            title: "IT Statistics, Data Science & Business Analysis",
+            rating: "4.5",
+            reviews: "1.2k",
+            price: "$50.00",
+            originalPrice: "$99.00",
+            lessons: 10,
+            duration: "24h",
+            students: "20+",
+            instructor: "Ong Endy",
+            avatar: "/asset/imageLogin/user.jpg",
+            category: "Data Science",
+            description:
+              "Master statistical analysis, data visualization, and business intelligence techniques using real-world data.",
+          },
+          {
+            id: 2,
+            image:
+              "https://thetutorbridge.com/blog/wp-content/uploads/2025/02/Data-Science-Course.webp",
+            title: "HTML5 Complete Course For Beginners",
+            rating: "4.8",
+            reviews: "2.4k",
+            price: "$45.00",
+            originalPrice: "$89.00",
+            lessons: 8,
+            duration: "18h",
+            students: "30+",
+            instructor: "Ong Endy",
+            avatar: "/asset/imageLogin/user.jpg",
+            category: "Web Development",
+            description:
+              "Learn HTML5 from scratch and build responsive web pages with semantic structure and multimedia content.",
+          },
+          {
+            id: 3,
+            image:
+              "https://thetutorbridge.com/blog/wp-content/uploads/2025/02/Data-Science-Course.webp",
+            title: "Blockchain Essentials & Smart Contracts",
+            rating: "4.6",
+            reviews: "1.8k",
+            price: "$60.00",
+            originalPrice: "$120.00",
+            lessons: 12,
+            duration: "30h",
+            students: "50+",
+            instructor: "Ong Endy",
+            avatar: "/asset/imageLogin/user.jpg",
+            category: "Blockchain",
+            description:
+              "Explore blockchain technology, cryptocurrencies, and smart contracts with hands-on Solidity examples.",
+          },
+          {
+            id: 4,
+            image:
+              "https://thetutorbridge.com/blog/wp-content/uploads/2025/02/Data-Science-Course.webp",
+            title: "Live Streaming & Content Creation Masterclass",
+            rating: "4.9",
+            reviews: "3.1k",
+            price: "$55.00",
+            originalPrice: "$110.00",
+            lessons: 14,
+            duration: "28h",
+            students: "40+",
+            instructor: "Ong Endy",
+            avatar: "/asset/imageLogin/user.jpg",
+            category: "Content Creation",
+            description:
+              "Master livestreaming, camera presence, video editing, and content planning for YouTube, TikTok, and Twitch.",
+          },
+          {
+            id: 5,
+            image:
+              "https://thetutorbridge.com/blog/wp-content/uploads/2025/02/Data-Science-Course.webp",
+            title: "Advanced JavaScript Patterns",
+            rating: "4.7",
+            reviews: "1.5k",
+            price: "$65.00",
+            originalPrice: "$130.00",
+            lessons: 15,
+            duration: "32h",
+            students: "35+",
+            instructor: "Ong Endy",
+            avatar: "/asset/imageLogin/user.jpg",
+            category: "Web Development",
+            description:
+              "Learn closures, currying, modules, decorators, and modern JS patterns for scalable applications.",
+          },
+          {
+            id: 6,
+            image:
+              "https://thetutorbridge.com/blog/wp-content/uploads/2025/02/Data-Science-Course.webp",
+            title: "Machine Learning Fundamentals",
+            rating: "4.8",
+            reviews: "2.2k",
+            price: "$75.00",
+            originalPrice: "$150.00",
+            lessons: 18,
+            duration: "36h",
+            students: "45+",
+            instructor: "Ong Endy",
+            avatar: "/asset/imageLogin/user.jpg",
+            category: "Data Science",
+            description:
+              "Build ML models from scratch and with scikit-learn. Topics include regression, classification, and clustering.",
+          },
+          {
+            id: 7,
+            image:
+              "https://thetutorbridge.com/blog/wp-content/uploads/2025/02/Data-Science-Course.webp",
+            title: "UI/UX Design Principles",
+            rating: "4.9",
+            reviews: "2.8k",
+            price: "$50.00",
+            originalPrice: "$100.00",
+            lessons: 12,
+            duration: "24h",
+            students: "60+",
+            instructor: "Ong Endy",
+            avatar: "/asset/imageLogin/user.jpg",
+            category: "Design",
+            description:
+              "Design engaging interfaces with Figma, and understand the psychology behind user experience.",
+          },
+          {
+            id: 8,
+            image:
+              "https://thetutorbridge.com/blog/wp-content/uploads/2025/02/Data-Science-Course.webp",
+            title: "DevOps & Cloud Deployment",
+            rating: "4.7",
+            reviews: "1.7k",
+            price: "$70.00",
+            originalPrice: "$140.00",
+            lessons: 16,
+            duration: "34h",
+            students: "30+",
+            instructor: "Ong Endy",
+            avatar: "/asset/imageLogin/user.jpg",
+            category: "DevOps",
+            description:
+              "Automate software delivery and deploy apps using Docker, Kubernetes, and CI/CD pipelines on AWS.",
+          },
+        ];
+
+        const params = new URLSearchParams(window.location.search);
+        const courseId = parseInt(params.get("courseId"));
+        const course = courses.find((c) => c.id === courseId);
+
+        const container = document.getElementById("courseDetail");
+
+        if (!course) {
+          container.innerHTML = `<p class="text-center text-red-600 font-semibold">Course not found</p>`;
+          return;
+        }
+
+        document.title = `Learnify • ${course.title}`;
+
+        container.innerHTML = `
+          <div class="flex items-center gap-4 mb-6">
+            <img src="${course.avatar}" alt="${course.instructor}" class="w-12 h-12 rounded-full object-cover">
+            <div>
+              <h1 class="text-xl font-bold">${course.title}</h1>
+              <p class="text-sm text-gray-500">#${course.category}</p>
+            </div>
+          </div>
+          <img src="${course.image}" alt="${course.title}" class="w-full h-64 object-cover rounded-lg mb-6"/>
+          <p class="text-sm text-gray-700 mb-6">${course.description}</p>
+          <div class="flex flex-wrap gap-4 text-sm mb-6">
+            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full">📘 ${course.lessons} Lessons</span>
+            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full">⏱️ ${course.duration}</span>
+            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full">👥 ${course.students}</span>
+          </div>
+          <div class="flex items-center justify-between gap-4 text-sm">
+            <a href="Course.html">
+              <button class="flex items-center gap-2 px-4 py-2 border border-indigo-600 text-indigo-600 rounded hover:bg-indigo-100">
+                <i data-feather="arrow-left" class="w-4 h-4"></i> Back
+              </button>
+            </a>
+            <a href="Payment.html">
+              <button id="enrollBtn" class="flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">
+                Add to Cart <i class="bx bx-cart text-lg"></i>
+              </button>
+            </a>
+            <div class="flex gap-4 text-gray-500 ml-auto">
+              <span><i data-feather="heart" class="w-4 h-4"></i> 2.3K</span>
+              <span><i data-feather="eye" class="w-4 h-4"></i> 2.3K</span>
+            </div>
+          </div>
+        `;
+
+        // Add this line to render feather icons
+        if (window.feather) feather.replace();
+
+        document.getElementById("enrollBtn").addEventListener("click", () => {
+          localStorage.setItem("selectedCourse", JSON.stringify(course));
+          window.location.href = "Payment.html";
+        });
+      });
+    </script>
+  </body>
+</html>

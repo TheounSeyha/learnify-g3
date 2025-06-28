@@ -61,7 +61,7 @@
     // 🔧 renderer
     const $cards = document.getElementById("cards");
     $cards.innerHTML = cardsData.map(c => `
-      <div class="relative bg-white border border-gray-700 rounded-xl shadow-sm p-6 flex flex-col">
+      <div class="relative bg-white border border-gray-700 rounded-xl shadow-sm p-6 flex flex-col" data-aos="fade-down">
         <!-- angled banner image -->
         <img class="banner drop-shadow-md" src="${c.img}" alt="${c.title}">
         
